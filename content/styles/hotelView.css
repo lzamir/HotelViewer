@@ -1,0 +1,12 @@
+﻿#hotelImage {
+    width: 300px;
+}
+
+.hotelSingleView .stars {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.hotelSingleView > div {
+    margin: 10px 0;
+}

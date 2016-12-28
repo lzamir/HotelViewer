@@ -1,0 +1,59 @@
+﻿<div class="hotels view">
+    <div class="container">
+        <header>
+            <div id="search-and-filter" class="row">
+                <input id="searchBox" class="search form-control col-md-4" placeholder="Search for hotels" type="search" data-ng-model="searchText.name" />
+
+                <select id="selectedBrand" data-ng-model="filterByBrand.details.brand.txt" class="dropdown form-control col-md-4">
+                    <option value="">Select brand</option>
+                    <option data-ng-repeat="brand in brands" value="{{brand.txt}}">{{brand.txt}}</option>
+                </select>
+            </div>
+        </header>
+
+        <table class="table table-striped table-bordered table-hover hotelsTable">
+            <thead>
+                <tr>
+                    <th>Hotel Name</th>
+                    <th>City</th>
+                    <th>Country</th>
+                    <th>Rating</th>
+                    <th>Brand</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="hotel in hotels | filter:searchText | filter:filterByBrand | orderBy:'name'">
+                    <td>
+                        <a href="#/hotels/{{hotel._id}}">{{ hotel.name }}</a>
+                    </td>
+                    <td>{{ hotel.address.city }}
+                    </td>
+                    <td>{{ hotel.address.country }}
+                    </td>
+                    <td>
+                        <span class="stars">
+                            <span data-ng-style="{ 'width': getStars(hotel.details.starRating.val) }"></span>
+                        </span>
+                    </td>
+                    <td>{{ hotel.details.brand.txt }}
+                    </td>
+                    <td>
+                        <a data-ng-click="deleteHotel(hotel._id)" class="removeHotel">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4 data-ng-show="recentItems.length >0">Recently visited items</h4>
+
+        <div>
+            <div data-ng-repeat="hotel in recentItems | orderBy:'-'">
+                {{hotel.datetime | date:"dd-MMM-yyyy 'at' h:mma"}} - 
+               <a href="#/hotels/{{hotel._id}}">{{ hotel.name }}</a>
+            </div>
+        </div>
+    </div>
+</div>

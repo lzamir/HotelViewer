@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="hotelsApp">
+<head>
+    <title>Hotel Viewer</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="Content/styles/bootstrap.min.css" rel="stylesheet" />
+    <link href="content/styles/xeditable.css" rel="stylesheet">
+    <link href="content/styles/main.css" rel="stylesheet" />
+    <link href="content/styles/hotelView.css" rel="stylesheet" />
+</head>
+<body>
+
+    <header id="mainHeader">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation">
+            <h1 class="navbar-header">
+                <a href="#/">Hotel Viewer</a>
+            </h1>
+        </nav>
+    </header>
+
+    <!-- animated-view is a custom directive -->
+    <div id="page-wrapper" animated-view></div>
+
+    <footer id="footer" class="panel-footer footer navbar-fixed-bottom">
+        <div class="row">
+            <div>
+                Created by <a href="https://linkedin.com/in/lzamir" target="_blank"><strong>Lior Zamir</strong></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Vendor Libs -->
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/angular-route.js"></script>
+    <script src="scripts/jquery-3.1.1.min.js"></script>
+    <!--jQuery only used for Bootstrap functionality-->
+
+    <!-- UI Libs -->
+    <script src="scripts/bootstrap.js"></script>
+    <script src="scripts/xeditable.js"></script>
+
+    <!-- App Libs -->
+    <script src="app/app.js"></script>
+    <script src="app/services/hotelService.js"></script>
+    <script src="app/controllers/hotelsController.js"></script>
+    <script src="app/controllers/hotelViewController.js"></script>
+    <script src="app/directives/animatedView.js"></script>
+
+</body>
+</html>

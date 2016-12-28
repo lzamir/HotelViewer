@@ -1,0 +1,30 @@
+﻿<div class="container">
+    <header>
+        <h2><a href="#" editable-text="hotel.name">{{ hotel.name }}</a></h2>
+    </header>
+
+    <div class="hotelSingleView">
+        <div>
+            Address:
+            <a href="#" editable-text="hotel.address.address">{{hotel.address.address}}</a>, 
+            <a href="#" editable-text="hotel.address.city">{{hotel.address.city}}</a>,
+            <a href="#" editable-text="hotel.address.country">{{hotel.address.country}}</a>
+        </div>
+        <div>
+            <span class="stars">
+                <span data-ng-style="{ 'width': getStars(hotel.details.starRating.val) }"></span>
+            </span><a href="#" editable-range="hotel.details.starRating.val" e-max="5" e-step="0.5">{{hotel.details.starRating.val}} stars
+            </a>
+        </div>
+        <div>Currency: <a href="#" editable-text="hotel.details.currency">{{hotel.details.currency}}</a></div>
+        <div>CheckIn: <a href="#" editable-text="hotel.details.checkIn">{{hotel.details.checkIn}}</a></div>
+        <div>CheckOut: <a href="#" editable-text="hotel.details.checkOut">{{hotel.details.checkOut}}</a></div>
+        <div># of rooms: <a href="#" editable-number="hotel.details.numOfRooms" e-min="0" e-max="10000">{{hotel.details.numOfRooms}}</a></div>
+        <div><a href="#" editable-textarea="hotel.description" e-rows="4" e-cols="40">{{hotel.description}}</a></div>
+        <div>
+            <img id="hotelImage" data-ng-src="{{hotel.images[0].url}}"
+                alt="{{hotel.description}}" />
+        </div>
+
+    </div>
+</div>
